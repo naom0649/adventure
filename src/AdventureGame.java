@@ -23,7 +23,7 @@ public class AdventureGame {
                 "\nThe dazzling lights in the night sky, and the loud murmuring from people eating their food. " +
                 "\nThe town square has a beautiful mini park. Filled with marmor statues and a center piece fountain." );
         Room room5 = new Room("Yrevale","There is something about this place, a nostalgic feeling close to home\nThe intriguing smell of food is like music to your ears." +
-                "\n A distant yet calming discussion is taking place nearby. People seem fulfilled and worry-free. You are were you belong... ");
+                "\n A distant yet calming discussion is taking place nearby. People seem fulfilled and worry-free. You are where you belong... ");
         Room room6 = new Room("Glia","\nAll of a sudden it starts raining. The rain is making you dazed and confused\n " +
                 "You are stumbling around looking for life, the few houses which are there seems totally abandoned\nYou are starting to question the chances of survival" );
         Room room7 = new Room("Yhia", "\nThe surrounding noises seems unbearable at first, but yet settling.\n A wild horse appears from a distance, at first you seems relieved, but as the horse gets closer, you see the anger it approaches you with." +
