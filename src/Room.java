@@ -8,7 +8,10 @@ public class Room {
     private String name;
     private String description;
 
-
+    public Room(String aName, String aDescription){
+        this.name = aName;
+        this.description = aDescription;
+    }
 
     public String toString(){
         return "You are in  " + getName() + "\n" +  getDescription();
@@ -16,20 +19,30 @@ public class Room {
     }
 
 
-
-
-    public void setNorth(Room north){
-       this.north = north;
+    public void setNorth(Room other){
+       this.north = other;
+        if(other.getSouth() != this){
+            other.setSouth(this);
+        }
     }
-    public void  setSouth(Room south){
-        this.south = south;
+    public void  setSouth(Room other){
+        this.south = other;
+        if(other.getNorth() != this){
+            other.setNorth(this);
+        }
     }
-    public void setEast(Room east) {
-        this.east = east;
+    public void setEast(Room other) {
+        this.east = other;
+        if(other.getWest() != this){
+            other.setWest(this);
+        }
 
     }
-    public void setWest(Room west){
-        this.west =west;
+    public void setWest(Room other){
+        this.west =other;
+        if(other.getEast() != this){
+            other.setEast(this);
+        }
     }
 
     public  void setName(String name){
