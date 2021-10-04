@@ -6,11 +6,15 @@ public class Room {
     private Room west;
 
     private String name;
+    private String description;
+
 
 
     public String toString(){
-        return "Du er i " + getName();
+        return "You are in  " + getName() + "\n" +  getDescription();
+
     }
+
 
 
 
@@ -32,6 +36,11 @@ public class Room {
         this.name = name;
     }
 
+    public  void setDescription(String description){
+        this.description = description;
+
+    }
+
 
     public Room getNorth(){
         return north;
@@ -51,6 +60,10 @@ public class Room {
 
     public String getName(){
         return name;
+    }
+
+    public String getDescription(){
+        return description;
     }
 
 
