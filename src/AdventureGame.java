@@ -79,6 +79,9 @@ public class AdventureGame {
                 go south
                 go east
                 or go west
+                take
+                drop
+                inventory/inv
                 """);
         System.out.println("For informations type " + '"' + "help" + '"');
         System.out.println("Lets begin ;) ");
@@ -96,7 +99,10 @@ public class AdventureGame {
                         input.equalsIgnoreCase("Go north") ||
                         input.equalsIgnoreCase("Exit") ||
                         input.equalsIgnoreCase("Help") ||
-                        input.equalsIgnoreCase("Look")) {
+                        input.equalsIgnoreCase("Look") ||
+                        input.equalsIgnoreCase("Take") ||
+                        input.equalsIgnoreCase("Drop")||
+                        input.equalsIgnoreCase("Inventory/Inv")) {
 
 
                     isWalid = true;
