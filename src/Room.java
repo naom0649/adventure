@@ -7,6 +7,10 @@ public class Room {
 
     private String name;
     private String description;
+    
+    private Inventory inventory;
+
+    Room(){}
 
     public Room(String aName, String aDescription){
         this.name = aName;
