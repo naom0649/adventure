@@ -10,7 +10,7 @@ public class AdventureGame {
         boolean isWalid = true;
         boolean gameIsRunning = true;
         Map map = new Map(1);
-        Axe axe = new Axe("Axe ","The best axe in EU");
+        Colors color = new Colors();
 
         Room currentRoom = map.getStarterRoom();
 
@@ -80,7 +80,7 @@ public class AdventureGame {
 
                 case "go north":
                     if (currentRoom.getNorth() == null) {
-                        System.out.println("The northern gate is closed");
+                        System.out.println(color.red() + "The northern gate is closed" + color.resetText());
                         break;
                     }
                     currentRoom = currentRoom.getNorth();
@@ -89,7 +89,7 @@ public class AdventureGame {
 
                 case "go south":
                     if (currentRoom.getSouth() == null) {
-                        System.out.println("The southern gate is closed");
+                        System.out.println(color.red() + "The southern gate is closed" + color.resetText());
                         break;
                     }
                     currentRoom = currentRoom.getSouth();
@@ -98,7 +98,7 @@ public class AdventureGame {
 
                 case "go east":
                     if (currentRoom.getEast() == null) {
-                        System.out.println("The eastern gate is closed");
+                        System.out.println(color.red() + "The eastern gate is closed" + color.resetText());
                         break;
                     }
                     currentRoom = currentRoom.getEast();
@@ -107,7 +107,7 @@ public class AdventureGame {
 
                 case "go west":
                     if (currentRoom.getWest() == null) {
-                        System.out.println("The western gate is closed");
+                        System.out.println(color.red() + "The western gate is closed" + color.resetText());
                         break;
                     }
                     currentRoom = currentRoom.getWest();

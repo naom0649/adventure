@@ -1,19 +1,15 @@
-public abstract class Weapon extends Item{
+public class Weapon extends Item {
     private String name;
     private String description;
 
     public Weapon getWeapon(){
         //Returnere våben objektet.
-        return null;
+        return new Weapon(getName(), getDescription());
     }
 
     public Weapon(String aName, String aDescription){
         this.name = aName;
         this.description = aDescription;
-    }
-
-    public String toString(){
-        return name + " " +description;
     }
 
     public String getName() {
@@ -30,5 +26,9 @@ public abstract class Weapon extends Item{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String toString(){
+        return name + "\n " +description;
     }
 }

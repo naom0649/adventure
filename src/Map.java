@@ -17,7 +17,7 @@ public class Map {
     }
 
 
-    public void map1(){
+    private void map1(){
 
         Room room1 = new Room("Meim"," In front of you, you see a small village. " +
                 "\nIt's a farmer village. You see a tiny flee market, and the occasionally horse carriage carry goods between the stands. \nYou see the town folks is smiling, and having a good time." +
