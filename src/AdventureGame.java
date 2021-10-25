@@ -76,6 +76,7 @@ public class AdventureGame {
                     break;
                 case "look":
                     System.out.println(currentRoom);
+                    System.out.println(currentRoom.getInventory());
                     break;
 
                 case "go north":

@@ -2,12 +2,13 @@ public class Weapon extends Item {
     private String name;
     private String description;
 
+
     public Weapon getWeapon(){
         //Returnere våben objektet.
-        return new Weapon(getName(), getDescription());
+        return null;
     }
 
-    public Weapon(String aName, String aDescription){
+   public Weapon(String aName, String aDescription){//<----- fejl
         this.name = aName;
         this.description = aDescription;
     }

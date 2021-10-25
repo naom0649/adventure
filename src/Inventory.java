@@ -5,7 +5,9 @@ public class Inventory{
     private ArrayList<Item> items = new ArrayList<>();
     Colors color = new Colors();
 
-    public void preMadeInv(int i) {
+    public Inventory(){}
+
+    public Inventory(int i) {
 
         switch (i) {
             case 1:
