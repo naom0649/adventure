@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-public class Inventory {
+public class Inventory{
+    Item item = new Item();
     private ArrayList<Item> items = new ArrayList<>();
     Colors color = new Colors();
 

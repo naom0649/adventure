@@ -10,7 +10,7 @@ public class Room {
     
     private Inventory inventory;
 
-    Room(){}
+    public Room(){}
 
     public Room(String aName, String aDescription){
         this.name = aName;
