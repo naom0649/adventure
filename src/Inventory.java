@@ -35,8 +35,6 @@ public class Inventory {
 
 
     private ArrayList<Item> inv1() {
-
-
         return items;
     }
 
