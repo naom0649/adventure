@@ -64,27 +64,32 @@ public class Map {
         // Rum 2 //
         //Items i rum 2 //
         room2.setEast(room3);
-        room2.addItem(new Item("Hammer", "Bad hAMMER"));
-        room2.addItem(new Item("Swordy", "Beskrivelse her"));
+        room2.addItem(new Item("Hammer", "Bad HAMMER"));
+        room2.addItem(new Item("Sword", "Beskrivelse her"));
 
 
         // Rum 3 //
         room3.setSouth(room6);
+        room3.addItem(new Item("Axe","Big Axe"));
 
         // Rum 4 //
         room4.setSouth(room7);
+        room4.addItem(new Item("Knife","Sharp Knife"));
 
         // Rum 5 //
 
         room5.setSouth(room8);
+        room5.addItem(new Item("Club","A club with sharp spikes"));
 
         // Rum 6 //
 
         room6.setSouth(room9);
+        room6.addItem(new Item("Bow and arrow","A magic bow"));
 
         // Rum 7 //
 
         room7.setEast(room8);
+        room7.addItem(new Item("Club","club made of wood"));
 
         // Rum 8 //
 
@@ -92,7 +97,8 @@ public class Map {
         // Rum 9 //
 
         room9.setWest(room8);
-
+        room9.addItem(new Item("Hammer","Big hammer with gold and spikes"));
+        room9.addItem(new Item("Knife","Sharp knife"));
 
 
         this.starterRoom = room1;
