@@ -85,7 +85,7 @@ public class TheGame {
                 for(int i = 0; i < player.getCurrentRoom().getInventory().size(); i++){
                     player.addItem(player.getCurrentRoom().getInventory().get(i));
                 }
-                System.out.println(color.green() + "You have taken everything!" + color.resetText());
+                player.cleanIt();
                 break;
 
             case "take":
@@ -98,9 +98,10 @@ public class TheGame {
                 for(int i = 0; i < player.getCurrentRoom().getInventory().size(); i++){
                     if(input.equalsIgnoreCase(player.getCurrentRoom().getInventory().get(i).toString())){
                         player.addItem(player.getCurrentRoom().getInventory().get(i));
+                        System.out.println("You have taken " + color.green() + input + color.resetText());
+
                         player.getCurrentRoom().removeItem(player.getCurrentRoom().getInventory().get(i));
-                        System.out.println(color.green() + "You have taken the item!" + color.resetText());
-                        break;
+                        //break;
                     }
                 }
                 break;
@@ -114,15 +115,17 @@ public class TheGame {
                 input = user.nextLine();
                 for(int i = 0; i < player.getInventory().size(); i++){
                     if(input.equalsIgnoreCase(player.getInventory().get(i).toString())){
+                        System.out.println("You have dropped: " + color.red() + input + color.resetText());
                         player.getCurrentRoom().addItem(player.getInventory().get(i));
                         player.removeItem(player.getInventory().get(i));
-                        System.out.println("You have dropped: " + color.red() + player.getInventory().get(i) + color.resetText());
+
                     }
                 }
                 break;
 
             case "inv","inventory":
-                System.out.println(color.yellow() + player.getInventory() + color.resetText());
+                player.cleanIt();
+                //System.out.println(color.yellow() + player.getInventory() + color.resetText());
             break;
 
         }

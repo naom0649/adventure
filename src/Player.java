@@ -4,6 +4,7 @@ public class Player {
     private Room currentRoom;
     private final String name;
     private final ArrayList<Item> inventory = new ArrayList<>();
+    private final Colors color = new Colors();
 
     Map map = new Map(1);
 
@@ -55,6 +56,13 @@ public class Player {
     public ArrayList<Item> getInventory() {
 
         return inventory;
+    }
+
+    public void cleanIt() {
+    String result = "+";
+    for (Item clean : inventory) {
+        System.out.println("You have taken " + color.green()+clean+color.resetText());
+    }
     }
 
     public void addItem(Item item) {
