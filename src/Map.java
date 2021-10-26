@@ -45,21 +45,22 @@ public class Map {
 
     void map1() {
 
-        // Rum 1 //
+        /* Rum 1 //
         //Items i rum 1 //
 
-        Item hammer = new Item("Thor", "1");
-        Item sword = new Item("Sword", "");
+        //Item hammer = new Item("Thor", "1");
+        //Item sword = new Item("Sword", "");
 
         //room1.addItem(hammer);
         //room1.addItem(sword);
         //room1.addItem(new Item("Hammer", "Beskrivelse"));
         //oom1.addItem(new Item("Sword", "Beskrivelse her"));
-
+*/
         room1.setSouth(room4);
         room1.setEast(room2);
-        room1.addItem(hammer);
-        room1.addItem(sword);
+        //room1.addItem(hammer);
+        room1.addItem(new Item("Sword", "Bad Sword"));
+        room1.addItem(new Item("Thor", "Bad HAMMER"));
 
         // Rum 2 //
         //Items i rum 2 //

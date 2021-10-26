@@ -39,8 +39,9 @@ public class TheGame {
                 }
             if (doNext == null) {
                 System.out.println(color.red() + "Wrong input" + color.resetText());
+                input = getStringInput("Choose the right direction");
             }
-            input = getStringInput("Choose the right direction");
+
         } while (doNext == null);
         System.out.println(doNext);
     }
@@ -122,8 +123,7 @@ public class TheGame {
                 }
                 break;
 
-            case "inventory":
-            case "inv":
+            case "inv","inventory":
                 System.out.println(color.yellow() + player.getInventory() + color.resetText());
             break;
 
