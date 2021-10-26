@@ -18,7 +18,6 @@ public class Colors {
     }
     public String red(){
         return TEXT_RED;
-
     }
     public String green(){
         return TEXT_GREEN;

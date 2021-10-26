@@ -6,6 +6,7 @@ public class TheGame {
     private Map map;
     private Player player;
     private boolean running;
+    private Colors color = new Colors();
 
     public void play(){
         map = new Map(1);
@@ -37,8 +38,7 @@ public class TheGame {
                 doNext = player.setCurrentRoom(input);
                 }
             if (doNext == null) {
-                System.out.println("Wrong input");
-                input = getStringInput("Choose the right direction");
+                System.out.println(color.red() + "Wrong input" + color.resetText());
             }
             input = getStringInput("Choose the right direction");
         } while (doNext == null);
@@ -61,26 +61,72 @@ public class TheGame {
                             - exit: You can exit the game at any moment by typing "exit".
                             - look: When you type "look" you will get a description of the room.
                             - help: When you are typing "help" this list will come.
-                            - take
+                            - take/take all: to take a single item or all item in a room.
                             - drop
                             - inventory/inv
                             """);
                 break;
+
             case "look":
                 System.out.println(player.getCurrentRoom());
-                System.out.println(player.getCurrentRoom().getInventory());
+                if(player.getCurrentRoom().getInventory().size() == 0){
+                    System.out.println(color.red() + "This place do not have any items" + color.resetText());
+                    break;
+                }
+                System.out.println("This place offers these items");
+                System.out.println(color.green() + player.getCurrentRoom().getInventory() + color.resetText());
+                break;
+
+            case "take all":
+                if(player.getCurrentRoom().getInventory().size() == 0){
+                    System.out.println(color.red() + "This place do not have any items" + color.resetText());
+                    break;
+                }
+                for(int i = 0; i < player.getCurrentRoom().getInventory().size(); i++){
+                    player.addItem(player.getCurrentRoom().getInventory().get(i));
+                }
+                System.out.println(color.green() + "You have taken everything!" + color.resetText());
                 break;
 
             case "take":
-                //Tag item fra rum og lig til Player
+                    if (player.getCurrentRoom().getInventory().size() == 0){
+                        System.out.println(color.red() + "This place do not have any items" + color.resetText());
+                        break;
+                    }
+                System.out.println("What would you like to take?");
+                input = user.nextLine();
+                for(int i = 0; i < player.getCurrentRoom().getInventory().size(); i++){
+                    if(input.equalsIgnoreCase(player.getCurrentRoom().getInventory().get(i).toString())){
+                        player.addItem(player.getCurrentRoom().getInventory().get(i));
+                        player.getCurrentRoom().removeItem(player.getCurrentRoom().getInventory().get(i));
+                        System.out.println("You have taken: " + color.green() +  player.getCurrentRoom().getInventory().get(i) + color.resetText());
+                        break;
+                    }
+                }
                 break;
+
             case "drop":
-                //Tag item fra Player og lig til rum
+                if(player.getInventory().size() == 0){
+                    System.out.println(color.red() + "You dont have any items :(" + color.resetText());
+                    break;
+                }
+                System.out.println("What would you like to drop?");
+                input = user.nextLine();
+                for(int i = 0; i < player.getInventory().size(); i++){
+                    if(input.equalsIgnoreCase(player.getInventory().get(i).toString())){
+                        player.getCurrentRoom().addItem(player.getInventory().get(i));
+                        player.removeItem(player.getInventory().get(i));
+                        System.out.println("You have dropped: " + color.red() + player.getInventory().get(i) + color.resetText());
+                        break;
+                    }
+                }
                 break;
+
             case "inventory":
             case "inv":
-                //Vis liste med Player inventory
+                System.out.println(color.yellow() + player.getInventory() + color.resetText());
             break;
+
         }
     return null;
     }
