@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Player {
     private Room currentRoom;
-    private String name;
-    private ArrayList<Item> inventory = new ArrayList<>();
+    private final String name;
+    private final ArrayList<Item> inventory = new ArrayList<>();
 
     Map map = new Map(1);
 
@@ -61,9 +61,7 @@ public class Player {
     }
 
     public ArrayList<Item> getInventory() {
-        for (Item cleaned : inventory){
-            System.out.println(cleaned.toString());
-        }
+
         return inventory;
     }
 

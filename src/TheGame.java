@@ -26,21 +26,20 @@ public class TheGame {
 
     public void run() {
         do {
-            movement(getStringInput("Choose a direction"));
+            movement("What");
         } while (running);
     }
 
     public void movement (String input) {
         String doNext;
+
         do {
+            input = getStringInput("What do you want?");
             doNext = helpCommands(input);
             if (doNext == null) {
                 doNext = player.setCurrentRoom(input);
-                }
-            if (doNext == null) {
-                System.out.println(color.red() + "Wrong input" + color.resetText());
-                input = getStringInput("Choose the right direction");
             }
+
 
         } while (doNext == null);
         System.out.println(doNext);

@@ -25,6 +25,7 @@ public class Room {
     }
 
     public ArrayList<Item> getInventory() {
+
         return this.inventory;
     }
 

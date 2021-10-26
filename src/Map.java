@@ -1,8 +1,7 @@
 public class Map {
     Room room = new Room();
 
-    private Room starterRoom;
-
+    private Room starterRoom;;
     public Room getStarterRoom(){
         return starterRoom;}
 
@@ -100,8 +99,6 @@ public class Map {
         room9.setWest(room8);
         room9.addItem(new Item("Hammer","Big hammer with gold and spikes"));
         room9.addItem(new Item("Knife","Sharp knife"));
-
-
 
         this.starterRoom = room1;
     }
