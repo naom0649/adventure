@@ -37,26 +37,22 @@ public class TheGame {
                 doNext = player.setCurrentRoom(input);
                 }
 
+
             if (doNext == null) {
                 System.out.println("Wrong input");
-                input = getStringInput("Choose a direction");
+                input = getStringInput("Choose the right direction");
             }
-
-
         } while (doNext == null);
         System.out.println(doNext);
     }
 
     public String helpCommands(String input){
-     //final String exit = "exit";
-     //final String help = "help";
-     //final String look = "look";
 
         switch (input.toLowerCase(Locale.ROOT)) {
             case "exit":
                 System.out.println("Bye");
                 running = false;
-                break;
+                System.exit(1);
             case "help":
                 System.out.println("""
                             - go north

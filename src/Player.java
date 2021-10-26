@@ -31,7 +31,7 @@ public class Player {
                 currentRoom = currentRoom.getNorth();
                 return currentRoom.toString();
             } else {
-                return "You can go that way" + currentRoom;
+                return "You cant go that way";
             }
         }
         if (input.equalsIgnoreCase("go south")) {
@@ -39,7 +39,7 @@ public class Player {
                 currentRoom = currentRoom.getSouth();
                 return currentRoom.toString();
             } else {
-                return "You can go that way" + currentRoom;
+                return "You cant go that way";
             }
         }
         if (input.equalsIgnoreCase("go east")) {
@@ -47,7 +47,7 @@ public class Player {
                 currentRoom = currentRoom.getEast();
                 return currentRoom.toString();
             } else {
-                return "You can go that way" + currentRoom;
+                return "You cant go that way";
             }
         }
         if (input.equalsIgnoreCase("go west")) {
@@ -55,7 +55,7 @@ public class Player {
                 currentRoom = currentRoom.getWest();
                 return currentRoom.toString();
             } else {
-                return "You can go that way" + currentRoom;
+                return "You cant go that way";
             }
         }
         return null;
