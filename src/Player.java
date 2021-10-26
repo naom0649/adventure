@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Player {
     private Room currentRoom;
@@ -8,7 +7,7 @@ public class Player {
 
     Map map = new Map(1);
 
-    public Player(String name) {
+    public Player(String name, Room room1) {
         this.name = name;
         currentRoom = map.room1;
         map.map1();
@@ -26,54 +25,49 @@ public class Player {
         return this.currentRoom;
     }
 
-    public void setCurrentRoom(Room currentRoom) {
-        this.currentRoom = currentRoom;
+    public String setCurrentRoom(String input) {
+        if (input.equalsIgnoreCase("go north")) {
+            if (currentRoom.getNorth() != null) {
+                currentRoom = currentRoom.getNorth();
+                return currentRoom.toString();
+            } else {
+                return "You can go that way" + currentRoom;
+            }
+        }
+        if (input.equalsIgnoreCase("go south")) {
+            if (currentRoom.getSouth() != null) {
+                currentRoom = currentRoom.getSouth();
+                return currentRoom.toString();
+            } else {
+                return "You can go that way" + currentRoom;
+            }
+        }
+        if (input.equalsIgnoreCase("go east")) {
+            if (currentRoom.getEast() != null) {
+                currentRoom = currentRoom.getEast();
+                return currentRoom.toString();
+            } else {
+                return "You can go that way" + currentRoom;
+            }
+        }
+        if (input.equalsIgnoreCase("go west")) {
+            if (currentRoom.getWest() != null) {
+                currentRoom = currentRoom.getWest();
+                return currentRoom.toString();
+            } else {
+                return "You can go that way" + currentRoom;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Item> getInventory() {
         return inventory;
     }
 
-    public boolean moving (String command) {
-        boolean go = true;
-        if (command.equalsIgnoreCase("go north")) {
-            if (currentRoom.getNorth() != null) {
-                currentRoom = currentRoom.getNorth();
-                go = true;
-            } else {
-                go = false;
-            }
-        }
-        if (command.equalsIgnoreCase("go south")) {
-            if (currentRoom.getSouth() != null) {
-                currentRoom = currentRoom.getNorth();
-                go = true;
-            } else {
-                go = false;
-            }
-        }
-        if (command.equalsIgnoreCase("go west")) {
-            if (currentRoom.getWest() != null) {
-                currentRoom = currentRoom.getNorth();
-                go = true;
-            } else {
-                go = false;
-            }
-        }
-        if (command.equalsIgnoreCase("go east")) {
-            if (currentRoom.getEast() != null) {
-                currentRoom = currentRoom.getNorth();
-                go = true;
-            } else {
-                go = false;
-            }
-        }
-
-        return go;
+    public String getName() {
+        return name;
     }
-
-
-
 
     /*public void help() {
         switch (input.toLowerCase(Locale.ROOT)) {
@@ -101,22 +95,5 @@ public class Player {
                 break;
         }
     }*/
-
-    public void welcomeScreen() {
-        System.out.println("Welcome to KEA adventure game.");
-        System.out.println("To move around the different room´s you have to type: ");
-        System.out.println(""" 
-                go north
-                go south
-                go east
-                or go west
-                take
-                drop
-                inventory/inv
-                """);
-        System.out.println("For informations type " + '"' + "help" + '"');
-        System.out.println("Lets begin ;) ");
-    }
-
 
 }

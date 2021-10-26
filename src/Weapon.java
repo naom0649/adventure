@@ -30,6 +30,6 @@ public abstract class Weapon extends Item {
     }
 
     public String toString(){
-        return name + "\n " +description;
+        return name;
     }
 }

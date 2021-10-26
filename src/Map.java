@@ -53,11 +53,13 @@ public class Map {
 
         //room1.addItem(hammer);
         //room1.addItem(sword);
-        room1.addItem(new Item("Hammer", "Beskrivelse"));
-        room1.addItem(new Item("Sword", "Beskrivelse her"));
+        //room1.addItem(new Item("Hammer", "Beskrivelse"));
+        //oom1.addItem(new Item("Sword", "Beskrivelse her"));
 
         room1.setSouth(room4);
         room1.setEast(room2);
+        room1.addItem(hammer);
+        room1.addItem(sword);
 
         // Rum 2 //
         //Items i rum 2 //

@@ -6,7 +6,6 @@ public class Room {
     private Room south;
     private Room east;
     private Room west;
-    private int roomCounter;
     private String name;
     private String description;
 
@@ -18,7 +17,6 @@ public class Room {
     public Room(String aName, String aDescription) {
         this.name = aName;
         this.description = aDescription;
-        this.roomCounter = 0;
     }
 
     public String toString() {
@@ -103,12 +101,5 @@ public class Room {
     public void removeItem(Item item) {
         inventory.remove(item);
     }
-
-    public int getRoomCounter() {
-        return roomCounter;
-    }
-    public void enteredRoom(){
-        roomCounter ++;
-    }
-
+    
 }
