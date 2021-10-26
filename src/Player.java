@@ -61,6 +61,9 @@ public class Player {
     }
 
     public ArrayList<Item> getInventory() {
+        for (Item cleaned : inventory){
+            System.out.println(cleaned.toString());
+        }
         return inventory;
     }
 

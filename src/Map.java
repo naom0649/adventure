@@ -101,6 +101,7 @@ public class Map {
         room9.addItem(new Item("Knife","Sharp knife"));
 
 
+
         this.starterRoom = room1;
     }
 

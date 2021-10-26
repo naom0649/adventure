@@ -36,12 +36,11 @@ public class TheGame {
             if (doNext == null) {
                 doNext = player.setCurrentRoom(input);
                 }
-
-
             if (doNext == null) {
                 System.out.println("Wrong input");
                 input = getStringInput("Choose the right direction");
             }
+            input = getStringInput("Choose the right direction");
         } while (doNext == null);
         System.out.println(doNext);
     }
