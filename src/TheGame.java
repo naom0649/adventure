@@ -12,7 +12,7 @@ public class TheGame {
         running = true;
 
         String name = getStringInput("Name of player: ");
-        player = new Player(name, map.room1);
+        player = new Player(name);
         System.out.println("Welcome " + player.getName());
         welcomeScreen();
     }

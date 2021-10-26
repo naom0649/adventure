@@ -11,7 +11,8 @@ public class AdventureGame {
         runit.run();
 
     }
-        /*Player player = new Player("Mjor", map.room1);
+    /*
+        Player player = new Player("Mjor", map.room1);
         Scanner scan = new Scanner(System.in);
         boolean isWalid = true;
         boolean gameIsRunning = true;
@@ -135,7 +136,6 @@ public class AdventureGame {
                     break;
 
             }
-        }
-    }*/
-}
+        }*/
+    }
 

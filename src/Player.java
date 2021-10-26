@@ -7,10 +7,9 @@ public class Player {
 
     Map map = new Map(1);
 
-    public Player(String name, Room room1) {
+    public Player(String name) {
         this.name = name;
-        currentRoom = map.room1;
-        map.map1();
+        currentRoom = map.getStarterRoom();
     }
 
     public Room getRoom() {
@@ -69,7 +68,8 @@ public class Player {
         return name;
     }
 
-    /*public void help() {
+    /*
+    public void help() {
         switch (input.toLowerCase(Locale.ROOT)) {
             case "exit":
                 System.out.println("Bye");
@@ -94,6 +94,6 @@ public class Player {
                 System.out.println(player.getCurrentRoom().getInventory());
                 break;
         }
-    }*/
-
+    }
+*/
 }

@@ -48,8 +48,8 @@ public class Map {
         // Rum 1 //
         //Items i rum 1 //
 
-        Item hammer = new Item("Thor", "Beskrivelse");
-        Item sword = new Item("Sword", "anden beskrivelse");
+        Item hammer = new Item("Thor", "1");
+        Item sword = new Item("Sword", "");
 
         //room1.addItem(hammer);
         //room1.addItem(sword);

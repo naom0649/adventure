@@ -8,7 +8,7 @@ public abstract class Weapon extends Item {
         return null;
     }
 
-   public Weapon(String aName, String aDescription){//<----- fejl
+   public Weapon(String aName, String aDescription){
         this.name = aName;
         this.description = aDescription;
     }
@@ -29,7 +29,7 @@ public abstract class Weapon extends Item {
         this.description = description;
     }
 
-    public String toString(){
-        return name;
-    }
+
+
+
 }
