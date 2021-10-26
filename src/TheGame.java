@@ -100,7 +100,7 @@ public class TheGame {
                     if(input.equalsIgnoreCase(player.getCurrentRoom().getInventory().get(i).toString())){
                         player.addItem(player.getCurrentRoom().getInventory().get(i));
                         player.getCurrentRoom().removeItem(player.getCurrentRoom().getInventory().get(i));
-                        System.out.println("You have taken: " + color.green() +  player.getCurrentRoom().getInventory().get(i) + color.resetText());
+                        System.out.println(color.green() + "You have taken the item!" + color.resetText());
                         break;
                     }
                 }
@@ -118,7 +118,6 @@ public class TheGame {
                         player.getCurrentRoom().addItem(player.getInventory().get(i));
                         player.removeItem(player.getInventory().get(i));
                         System.out.println("You have dropped: " + color.red() + player.getInventory().get(i) + color.resetText());
-                        break;
                     }
                 }
                 break;
