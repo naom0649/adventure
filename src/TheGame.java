@@ -79,18 +79,21 @@ public class TheGame {
 
             case "take all":
                 if(player.getCurrentRoom().getInventory().size() == 0){
-                    System.out.println(color.red() + "This place do not have any items" + color.resetText());
+                    System.out.println(color.red() + "This place does not have any items" + color.resetText());
                     break;
                 }
+
                 for(int i = 0; i < player.getCurrentRoom().getInventory().size(); i++){
                     player.addItem(player.getCurrentRoom().getInventory().get(i));
+
                 }
-                player.cleanIt();
+                player.getCurrentRoom().getInventory().removeAll(player.getCurrentRoom().getInventory());
+                System.out.println(color.green() + "You have taken everything!" + color.resetText());
                 break;
 
             case "take":
                     if (player.getCurrentRoom().getInventory().size() == 0){
-                        System.out.println(color.red() + "This place do not have any items" + color.resetText());
+                        System.out.println(color.red() + "This place does not have any items" + color.resetText());
                         break;
                     }
                 System.out.println("What would you like to take?");
@@ -99,7 +102,6 @@ public class TheGame {
                     if(input.equalsIgnoreCase(player.getCurrentRoom().getInventory().get(i).toString())){
                         player.addItem(player.getCurrentRoom().getInventory().get(i));
                         System.out.println("You have taken " + color.green() + input + color.resetText());
-
                         player.getCurrentRoom().removeItem(player.getCurrentRoom().getInventory().get(i));
                         //break;
                     }

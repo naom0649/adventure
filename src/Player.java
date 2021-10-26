@@ -58,11 +58,14 @@ public class Player {
         return inventory;
     }
 
-    public void cleanIt() {
-    String result = "+";
+    public int cleanIt() {
+    int count = 1;
     for (Item clean : inventory) {
-        System.out.println("You have taken " + color.green()+clean+color.resetText());
+        System.out.print(count + ". Item ");
+        System.out.println(color.green()+clean+color.resetText());
+        count++;
     }
+    return count-1;
     }
 
     public void addItem(Item item) {
