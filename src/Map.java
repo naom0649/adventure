@@ -44,57 +44,31 @@ public class Map {
 
     void map1() {
 
-        /* Rum 1 //
-        //Items i rum 1 //
 
-        //Item hammer = new Item("Thor", "1");
-        //Item sword = new Item("Sword", "");
-
-        //room1.addItem(hammer);
-        //room1.addItem(sword);
-        //room1.addItem(new Item("Hammer", "Beskrivelse"));
-        //oom1.addItem(new Item("Sword", "Beskrivelse her"));
-*/
         room1.setSouth(room4);
         room1.setEast(room2);
-        //room1.addItem(hammer);
+
         room1.addItem(new Item("Sword", "Bad Sword"));
         room1.addItem(new Item("Thor", "Bad HAMMER"));
 
-        // Rum 2 //
-        //Items i rum 2 //
         room2.setEast(room3);
         room2.addItem(new Item("Hammer", "Bad HAMMER"));
         room2.addItem(new Item("Sword", "Beskrivelse her"));
 
-
-        // Rum 3 //
         room3.setSouth(room6);
         room3.addItem(new Item("Axe","Big Axe"));
 
-        // Rum 4 //
         room4.setSouth(room7);
         room4.addItem(new Item("Knife","Sharp Knife"));
-
-        // Rum 5 //
 
         room5.setSouth(room8);
         room5.addItem(new Item("Club","A club with sharp spikes"));
 
-        // Rum 6 //
-
         room6.setSouth(room9);
         room6.addItem(new Item("Bow and arrow","A magic bow"));
 
-        // Rum 7 //
-
         room7.setEast(room8);
         room7.addItem(new Item("Club","club made of wood"));
-
-        // Rum 8 //
-
-
-        // Rum 9 //
 
         room9.setWest(room8);
         room9.addItem(new Item("Hammer","Big hammer with gold and spikes"));

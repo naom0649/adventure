@@ -2,11 +2,11 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class TheGame {
-    private Scanner user = new Scanner(System.in);
+    private final Scanner user = new Scanner(System.in);
     private Map map;
     private Player player;
     private boolean running;
-    private Colors color = new Colors();
+    private final Colors color = new Colors();
 
     public void play(){
         map = new Map(1);

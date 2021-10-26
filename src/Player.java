@@ -12,14 +12,6 @@ public class Player {
         currentRoom = map.getStarterRoom();
     }
 
-    public Room getRoom() {
-        return currentRoom;
-    }
-
-    public void setRoom(Room room) {
-        this.currentRoom = room;
-    }
-
     public Room getCurrentRoom() {
         return this.currentRoom;
     }
@@ -76,33 +68,4 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    /*
-    public void help() {
-        switch (input.toLowerCase(Locale.ROOT)) {
-            case "exit":
-                System.out.println("Bye");
-                gameIsRunning = false;
-                break;
-            case "help":
-                System.out.println("""
-                        - go north
-                        - go south
-                        - go east
-                        - go west
-                        - exit: You can exit the game at any moment by typing "exit".
-                        - look: When you type "look" you will get a description of the room.
-                        - help: When you are typing "help" this list will come.
-                        - take
-                        - drop
-                        - inventory/inv
-                        """);
-                break;
-            case "look":
-                System.out.println(player.getCurrentRoom().getName());
-                System.out.println(player.getCurrentRoom().getInventory());
-                break;
-        }
-    }
-*/
 }
