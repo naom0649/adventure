@@ -6,96 +6,109 @@ public class Room {
     private Room south;
     private Room east;
     private Room west;
-
+    private int roomCounter;
     private String name;
     private String description;
-    
-    private ArrayList<Item> inventory;
 
-    public Room(){}
+    private ArrayList<Item> inventory = new ArrayList<>();
 
-    public Room(String aName, String aDescription){
-        this.name = aName;
-        this.description = aDescription;
+    public Room() {
     }
 
-    public String toString(){
-        return "You are in  " + getName() + "\n" +  getDescription();
+    public Room(String aName, String aDescription) {
+        this.name = aName;
+        this.description = aDescription;
+        this.roomCounter = 0;
+    }
+
+    public String toString() {
+        return "You are in  " + getName() + "\n" + getDescription();
 
     }
 
     public ArrayList<Item> getInventory() {
-        return inventory;
+        return this.inventory;
     }
 
-    public void setNorth(Room other){
-       this.north = other;
-        if(other.getSouth() != this){
+    public void setNorth(Room other) {
+        this.north = other;
+        if (other.getSouth() != this) {
             other.setSouth(this);
         }
     }
-    public void  setSouth(Room other){
+
+    public void setSouth(Room other) {
         this.south = other;
-        if(other.getNorth() != this){
+        if (other.getNorth() != this) {
             other.setNorth(this);
         }
     }
+
     public void setEast(Room other) {
         this.east = other;
-        if(other.getWest() != this){
+        if (other.getWest() != this) {
             other.setWest(this);
         }
 
     }
-    public void setWest(Room other){
-        this.west =other;
-        if(other.getEast() != this){
+
+    public void setWest(Room other) {
+        this.west = other;
+        if (other.getEast() != this) {
             other.setEast(this);
         }
     }
 
-    public  void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public  void setDescription(String description){
+    public void setDescription(String description) {
         this.description = description;
 
     }
 
 
-
-    public Room getNorth(){
+    public Room getNorth() {
         return north;
     }
 
-    public Room getSouth(){
+    public Room getSouth() {
         return south;
     }
 
-    public Room getEast(){
+    public Room getEast() {
         return east;
 
     }
-    public Room getWest(){
+
+    public Room getWest() {
         return west;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
 
 
-    public void addItem(Item item){
-        this.inventory.add(item);
+    public void addItem(Item item) {
+        inventory.add(item);
     }
 
-    public void removeITem(Item iTem){
-        this.inventory.remove(iTem);
+    public void removeItem(Item item) {
+        inventory.remove(item);
+    }
+
+    public int getRoomCounter() {
+        return roomCounter;
+    }
+    public void enteredRoom(){
+        roomCounter ++;
     }
 
 }

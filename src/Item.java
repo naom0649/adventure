@@ -5,12 +5,15 @@ public class Item {
     public Item(){}
 
     public Item(String itemName, String itemDescription) {
-        this.name = aName;
-        this.description = aDescription;
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
     }
 
-    public Item(String name){
-        this.name = name;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
+    public String getItemName() {
+        return itemName;
+    }
 }

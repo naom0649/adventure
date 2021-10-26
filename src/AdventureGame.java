@@ -5,12 +5,15 @@ public class AdventureGame {
 
 
     public static void main(String[] args) {
-
+        Player player = new Player("Mjor");
         Scanner scan = new Scanner(System.in);
         boolean isWalid = true;
         boolean gameIsRunning = true;
         Map map = new Map(1);
         Colors color = new Colors();
+        player.getCurrentRoom().enteredRoom();
+        Parser parser = new Parser();
+
 
         Room currentRoom = map.getStarterRoom();
 
@@ -28,10 +31,12 @@ public class AdventureGame {
                 """);
         System.out.println("For informations type " + '"' + "help" + '"');
         System.out.println("Lets begin ;) ");
-        System.out.println(currentRoom);
+        System.out.println(player.getCurrentRoom());
 
 
         while (gameIsRunning) {
+
+
             System.out.println("Choose a direction");
 
             String input = scan.nextLine();
@@ -75,8 +80,8 @@ public class AdventureGame {
                             """);
                     break;
                 case "look":
-                    System.out.println(currentRoom);
-                    System.out.println(currentRoom.getInventory());
+                    System.out.println(player.getCurrentRoom().getName());
+                    System.out.println(player.getCurrentRoom().getInventory());
                     break;
 
                 case "go north":
@@ -84,35 +89,39 @@ public class AdventureGame {
                         System.out.println(color.red() + "The northern gate is closed" + color.resetText());
                         break;
                     }
-                    currentRoom = currentRoom.getNorth();
-                    System.out.println(currentRoom);
+
+                    currentRoom = player.getCurrentRoom().getNorth();
+                    System.out.println(player.getCurrentRoom().getName());
                     break;
 
                 case "go south":
                     if (currentRoom.getSouth() == null) {
                         System.out.println(color.red() + "The southern gate is closed" + color.resetText());
-                        break;
-                    }
-                    currentRoom = currentRoom.getSouth();
-                    System.out.println(currentRoom);
+                    } else {
+                        currentRoom = currentRoom.getSouth();
+                        player.getCurrentRoom().enteredRoom();
+                        System.out.println(player.getCurrentRoom().getName()+ ". ");
+                    } if (player.getCurrentRoom().getRoomCounter() <= 1) {
+                    System.out.println(player.getCurrentRoom().getDescription() + ".");
+                }
                     break;
 
                 case "go east":
-                    if (currentRoom.getEast() == null) {
+                    if (player.getCurrentRoom().getEast() == null) {
                         System.out.println(color.red() + "The eastern gate is closed" + color.resetText());
                         break;
                     }
-                    currentRoom = currentRoom.getEast();
-                    System.out.println(currentRoom);
+                    currentRoom = player.getCurrentRoom().getEast();
+                    System.out.println(player.getCurrentRoom().getName());
                     break;
 
                 case "go west":
-                    if (currentRoom.getWest() == null) {
+                    if (player.getCurrentRoom().getWest() == null) {
                         System.out.println(color.red() + "The western gate is closed" + color.resetText());
                         break;
                     }
-                    currentRoom = currentRoom.getWest();
-                    System.out.println(currentRoom);
+                    currentRoom = player.getCurrentRoom().getWest();
+                    System.out.println(player.getCurrentRoom().getName());
                     break;
 
 
