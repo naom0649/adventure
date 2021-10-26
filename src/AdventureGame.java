@@ -56,7 +56,7 @@ public class AdventureGame {
                     isWalid = true;
 
                 } else {
-                    System.out.println("ikke gyldigt svar");
+                    System.out.println(color.red() + "ikke gyldigt svar" + color.resetText());
                 }
             } while (!isWalid);
 
@@ -124,6 +124,16 @@ public class AdventureGame {
                     System.out.println(player.getCurrentRoom().getName());
                     break;
 
+                case "take":
+                    //Tag item fra rum og lig til Player
+                    break;
+                case "drop":
+                    //Tag item fra Player og lig til rum
+                    break;
+                case "inventory":
+                case "inv":
+                    //Vis liste med Player inventory
+                    break;
 
             }
 
