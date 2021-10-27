@@ -48,31 +48,35 @@ public class Map {
         room1.setSouth(room4);
         room1.setEast(room2);
 
-        room1.addItem(new Item("Sword", "Bad Sword"));
-        room1.addItem(new Item("Thor", "Bad HAMMER"));
+        room1.addItem(new Item("lamp", "A lamp", 0.3));
+        room1.addItem(new Item("Sword", "Bad Sword", 2, 5, true));
+        room1.addItem(new Item("Thor", "Bad HAMMER", 2.5, 4, true));
 
         room2.setEast(room3);
-        room2.addItem(new Item("Hammer", "Bad HAMMER"));
-        room2.addItem(new Item("Sword", "Beskrivelse her"));
+        room2.addItem(new Item("Bread", "Eat it to get health back", 0.1, 5, false));
+        room2.addItem(new Item("Hammer", "Bad HAMMER", 2.5, 4, true));
+        room2.addItem(new Item("Sword", "Beskrivelse her", 2, 5, true));
 
         room3.setSouth(room6);
-        room3.addItem(new Item("Axe","Big Axe"));
+        room3.addItem(new Item("Axe","Big Axe", 3.5, 6, true));
+        room3.addItem(new Item("Apple", "Eat it to get health back", 0.1, 5, false));
 
         room4.setSouth(room7);
-        room4.addItem(new Item("Knife","Sharp Knife"));
+        room4.addItem(new Item("Knife","Sharp Knife", 1.2, 2, true));
 
         room5.setSouth(room8);
-        room5.addItem(new Item("Club","A club with sharp spikes"));
+        room5.addItem(new Item("Bread", "Eat it to get health back", 0.1, 5, false));
+        room5.addItem(new Item("Club","A club with sharp spikes", 3.4, 4, true));
 
         room6.setSouth(room9);
-        room6.addItem(new Item("Bow and arrow","A magic bow"));
+        room6.addItem(new Item("Bow and arrow","A magic bow", 1, 4, true));
 
         room7.setEast(room8);
-        room7.addItem(new Item("Club","club made of wood"));
+        room7.addItem(new Item("Club","club made of wood", 2.8, 2, true));
 
         room9.setWest(room8);
-        room9.addItem(new Item("Hammer","Big hammer with gold and spikes"));
-        room9.addItem(new Item("Knife","Sharp knife"));
+        room9.addItem(new Item("Hammer","Big hammer with gold and spikes", 6, 10, true));
+        room9.addItem(new Item("Knife","Sharp knife", 1.2, 2, true));
 
         this.starterRoom = room1;
     }

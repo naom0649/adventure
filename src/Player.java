@@ -7,7 +7,7 @@ public class Player {
     private final Colors color = new Colors();
 
     private int health = 100;
-    private double carryCapacity = 35; //35kg
+    private double carryCapacity = 15; //15kg
 
     Map map = new Map(1);
 
@@ -65,7 +65,7 @@ public class Player {
     int count = 1;
     for (Item clean : inventory) {
         System.out.print(count + ". Item ");
-        System.out.println(color.green()+clean+color.resetText());
+        System.out.println(color.yellow()+clean+color.resetText());
         count++;
     }
     return count-1;
@@ -82,4 +82,21 @@ public class Player {
     public String getName() {
         return name;
     }
+
+    public void setCarryCapacity(double carryCapacity) {
+        this.carryCapacity = carryCapacity;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public double getCarryCapacity() {
+        return carryCapacity;
+    }
+
 }
