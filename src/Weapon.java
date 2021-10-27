@@ -8,6 +8,7 @@ public abstract class Weapon extends Item {
         return null;
     }
 
+
    public Weapon(String aName, String aDescription){
         this.name = aName;
         this.description = aDescription;
