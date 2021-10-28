@@ -1,12 +1,16 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
     private Room currentRoom;
     private final String name;
     private final ArrayList<Item> inventory = new ArrayList<>();
     private final Colors color = new Colors();
+    private final Scanner user = new Scanner(System.in);
+
 
     private int health = 100;
+    private final int maxHealth = 100;
     private double carryCapacity = 15; //15kg
 
     Map map = new Map(1);
@@ -71,6 +75,22 @@ public class Player {
     return count-1;
     }
 
+    public void eat(){
+        System.out.println("What would you like to eat?");
+        String input = user.nextLine();
+        for (int i = 0; i < getCurrentRoom().getInventory().size(); i++) {
+            if (input.equalsIgnoreCase((getCurrentRoom().getInventory().get(i)).getItemName())){
+            addItem(getCurrentRoom().getInventory().get(i));
+            System.out.println("You have eaten " + color.green() + input + color.resetText());
+            Food food = (Food) getCurrentRoom().getInventory().get(i);
+            adjustHealth(food.getHealthBack());
+            getCurrentRoom().removeItem(getCurrentRoom().getInventory().get(i));
+            removeItem(getInventory().get(i));
+            }
+
+        }
+    }
+
     public void addItem(Item item) {
         inventory.add(item);
     }
@@ -88,7 +108,24 @@ public class Player {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+
+        if (health >= 100){
+            this.health = maxHealth;
+        } else {
+            this.health = health;
+        }
+        if (health < 100 && health > 80){
+            System.out.println("You are in great health");
+        } else if (health < 80 && health > 50){
+            System.out.println("You are in pretty decent health");
+        } else if (health < 50 && health > 30){
+            System.out.println("You are in poor health");
+        } else if (health < 30 && health > 10){
+            System.out.println("You are in critical health");
+        } else {
+            System.out.println("You are dying");
+        }
+
     }
 
     public int getHealth() {

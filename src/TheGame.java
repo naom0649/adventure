@@ -131,7 +131,8 @@ public class TheGame {
             break;
 
             case "eat":
-                player.getInventory()
+                player.eat();
+
 
         }
     return null;
