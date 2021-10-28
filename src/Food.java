@@ -1,8 +1,8 @@
 public class Food extends Item {
     private double healthBack;
 
-    public Food(String name, String description,double healthBack){
-        super();
+    public Food(String itemName, String itemDescription,double weight,double healthBack){
+        super(itemName, itemDescription, weight);
         this.healthBack = healthBack;
     }
 
@@ -21,6 +21,7 @@ public class Food extends Item {
     }
 
     public double getHealthBack() {
+
         return healthBack;
     }
 

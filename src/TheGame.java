@@ -121,7 +121,6 @@ public class TheGame {
                         System.out.println("You have dropped: " + color.red() + input + color.resetText());
                         player.getCurrentRoom().addItem(player.getInventory().get(i));
                         player.removeItem(player.getInventory().get(i));
-
                     }
                 }
                 break;
@@ -130,6 +129,9 @@ public class TheGame {
                 player.cleanIt();
                 //System.out.println(color.yellow() + player.getInventory() + color.resetText());
             break;
+
+            case "eat":
+                player.getInventory()
 
         }
     return null;

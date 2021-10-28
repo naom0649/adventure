@@ -49,34 +49,38 @@ public class Map {
         room1.setEast(room2);
 
         room1.addItem(new Item("lamp", "A lamp", 0.3));
-        room1.addItem(new Weapon("Sword", "Bad Sword", 2,5));
-        room1.addItem(new Item("Thor", "Bad HAMMER", 2.5, 4, true));
+        room1.addItem(new MeleeWeapon("Sword", "Bad Sword", 2,5));
+        room1.addItem(new MeleeWeapon("Thor", "Bad HAMMER", 2.5, 4));
 
         room2.setEast(room3);
-        room2.addItem(new Item("Bread", "Eat it to get health back", 0.1, 5, false));
-        room2.addItem(new Item("Hammer", "Bad HAMMER", 2.5, 4, true));
-        room2.addItem(new Item("Sword", "Beskrivelse her", 2, 5, true));
+        room2.addItem(new Food("Bread", "Eat it to get health back", 0.2, 15));
+        room2.addItem(new MeleeWeapon("Hammer", "Bad HAMMER", 2.5, 4));
+        room2.addItem(new ShootingWeapon("Bow", "Beskrivelse her", 2.7, 5));
 
         room3.setSouth(room6);
-        room3.addItem(new Item("Axe","Big Axe", 3.5, 6, true));
-        room3.addItem(new Item("Apple", "Eat it to get health back", 0.1, 5, false));
+        room3.addItem(new MeleeWeapon("Axe","Big Axe", 3.5, 6));
+        room3.addItem(new ShootingWeapon("Bowy","Big Axe", 1.5, 8));
+        room3.addItem(new Food("Apple", "Eat it to get health back", 0.1, 5));
 
         room4.setSouth(room7);
-        room4.addItem(new Item("Knife","Sharp Knife", 1.2, 2, true));
+        room4.addItem(new MeleeWeapon("Knife","Sharp Knife", 1.2, 2));
 
         room5.setSouth(room8);
-        room5.addItem(new Food("Bread", "Eat it to get health back", 0.1, 5, false));
-        room5.addItem(new Item("Club","A club with sharp spikes", 3.4, 4, true));
 
+        room6.addItem(new Food("Mushroom","Live forever", 1.5, -10));
+        room6.addItem(new MeleeWeapon("Club","A club with sharp spikes", 3.4, 4));
         room6.setSouth(room9);
-        room6.addItem(new Item("Bow and arrow","A magic bow", 1, 4, true));
+        room6.addItem(new ShootingWeapon("Bow and arrow","A magic bow", 1, 10));
 
         room7.setEast(room8);
-        room7.addItem(new Item("Club","club made of wood", 2.8, 2, true));
+        room7.addItem(new MeleeWeapon("Club","club made of wood", 2.8, 2));
+
+        room8.addItem(new Food("Curry","Like te best ever",1,8));
+        room8.addItem(new MeleeWeapon("Furry Axe","Axe made of wood", 5.8, 19));
 
         room9.setWest(room8);
-        room9.addItem(new Item("Hammer","Big hammer with gold and spikes", 6, 10, true));
-        room9.addItem(new Item("Knife","Sharp knife", 1.2, 2, true));
+        room9.addItem(new MeleeWeapon("Hammer","Big hammer with gold and spikes", 6, 10));
+        room9.addItem(new ShootingWeapon("Poloarms","Sharp knife", 1.2, 2));
 
         this.starterRoom = room1;
     }
