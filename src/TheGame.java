@@ -132,7 +132,10 @@ public class TheGame {
 
             case "eat":
                 player.eat();
-
+                System.out.println("Health: "+player.getHealth());
+                break;
+            case "health":
+                System.out.println("Health: "+player.getHealth());
 
         }
     return null;

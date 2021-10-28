@@ -78,13 +78,12 @@ public class Player {
     public void eat(){
         System.out.println("What would you like to eat?");
         String input = user.nextLine();
-        for (int i = 0; i < getCurrentRoom().getInventory().size(); i++) {
-            if (input.equalsIgnoreCase((getCurrentRoom().getInventory().get(i)).getItemName())){
-            addItem(getCurrentRoom().getInventory().get(i));
+        for (int i = 0; i < getInventory().size(); i++) {
+            if (input.equalsIgnoreCase((getInventory().get(i)).getItemName())){
             System.out.println("You have eaten " + color.green() + input + color.resetText());
-            Food food = (Food) getCurrentRoom().getInventory().get(i);
+            Food food = (Food) getInventory().get(i);
             adjustHealth(food.getHealthBack());
-            getCurrentRoom().removeItem(getCurrentRoom().getInventory().get(i));
+
             removeItem(getInventory().get(i));
             }
 
@@ -114,13 +113,13 @@ public class Player {
         } else {
             this.health = health;
         }
-        if (health < 100 && health > 80){
+        if (this.health <= 100 && this.health > 80){
             System.out.println("You are in great health");
-        } else if (health < 80 && health > 50){
+        } else if (this.health <= 80 && this.health > 50){
             System.out.println("You are in pretty decent health");
-        } else if (health < 50 && health > 30){
+        } else if (this.health <= 50 && this.health > 30){
             System.out.println("You are in poor health");
-        } else if (health < 30 && health > 10){
+        } else if (this.health <= 30 && this.health > 10){
             System.out.println("You are in critical health");
         } else {
             System.out.println("You are dying");
