@@ -1,6 +1,9 @@
 public abstract class Weapon extends Item {
-    private String name;
-    private String description;
+    protected int damage;
+
+    //Constructor, så man kan oprette et item, som normalt, men angive om den skal gøre skade eller ej
+    public Weapon(){
+    }
 
 
     public Weapon getWeapon(){
@@ -8,26 +11,20 @@ public abstract class Weapon extends Item {
         return null;
     }
 
-
-   public Weapon(String aName, String aDescription){
-        this.name = aName;
-        this.description = aDescription;
-    }
-
     public String getName() {
-        return name;
+        return itemName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.itemName = name;
     }
 
     public String getDescription() {
-        return description;
+        return itemDescription;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.itemDescription = description;
     }
 
 

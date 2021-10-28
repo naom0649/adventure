@@ -1,23 +1,30 @@
 public class Food extends Item {
-    private String name;
-    private String description;
+    private double healthBack;
 
-    public Food(String name, String description){
-        this.name = name;
-        this.description = description;
+    public Food(String name, String description,double healthBack){
+        super();
+        this.healthBack = healthBack;
     }
 
-    public String getName(){return name;}
+    public String getName(){return itemName;}
 
     public void setName(String name){
-        this.name = name;
+        this.itemName = name;
     }
 
     public String getDescription() {
-        return description;
+        return itemDescription;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.itemDescription = description;
+    }
+
+    public double getHealthBack() {
+        return healthBack;
+    }
+
+    public void setHealthBack(double healthBack) {
+        this.healthBack = healthBack;
     }
 }

@@ -95,6 +95,10 @@ public class Player {
         return health;
     }
 
+    public void adjustHealth(int changeHealth){
+        setHealth(getHealth()+changeHealth);
+    }
+
     public double getCarryCapacity() {
         return carryCapacity;
     }

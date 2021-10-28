@@ -75,6 +75,7 @@ public class TheGame {
                 }
                 System.out.println("This place offers these items");
                 System.out.println(color.green() + player.getCurrentRoom().getInventory() + color.resetText());
+                System.out.println("Your Health is "+player.getHealth());
                 break;
 
             case "take all":

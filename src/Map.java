@@ -49,7 +49,7 @@ public class Map {
         room1.setEast(room2);
 
         room1.addItem(new Item("lamp", "A lamp", 0.3));
-        room1.addItem(new Item("Sword", "Bad Sword", 2, 5, true));
+        room1.addItem(new Weapon("Sword", "Bad Sword", 2,5));
         room1.addItem(new Item("Thor", "Bad HAMMER", 2.5, 4, true));
 
         room2.setEast(room3);
@@ -65,7 +65,7 @@ public class Map {
         room4.addItem(new Item("Knife","Sharp Knife", 1.2, 2, true));
 
         room5.setSouth(room8);
-        room5.addItem(new Item("Bread", "Eat it to get health back", 0.1, 5, false));
+        room5.addItem(new Food("Bread", "Eat it to get health back", 0.1, 5, false));
         room5.addItem(new Item("Club","A club with sharp spikes", 3.4, 4, true));
 
         room6.setSouth(room9);
