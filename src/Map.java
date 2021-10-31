@@ -51,6 +51,7 @@ public class Map {
         room1.addItem(new Item("lamp", "A lamp", 0.3));
         room1.addItem(new MeleeWeapon("Sword", "Bad Sword", 2,5));
         room1.addItem(new MeleeWeapon("Thor", "Bad HAMMER", 2.5, 4));
+        room1.setEnemy(new Enemy("Test Enemy 1", 10));
 
         room2.setEast(room3);
         room2.addItem(new Food("Bread", "Eat it to get health back", 0.2, 15));

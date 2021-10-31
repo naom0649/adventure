@@ -8,6 +8,7 @@ public class Room {
     private Room west;
     private String name;
     private String description;
+    private Enemy enemy;
 
     private ArrayList<Item> inventory = new ArrayList<>();
 
@@ -84,13 +85,20 @@ public class Room {
         return description;
     }
 
-
     public void addItem(Item item) {
         inventory.add(item);
     }
 
     public void removeItem(Item item) {
         inventory.remove(item);
+    }
+
+    public void setEnemy(Enemy enemy){
+        this.enemy = enemy;
+    }
+
+    public Enemy getEnemy(){
+        return this.enemy;
     }
     
 }
