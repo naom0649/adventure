@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
@@ -20,6 +21,10 @@ public class Player {
         currentRoom = map.getStarterRoom();
     }
 
+    public void combat(Player player, Enemy enemy){
+        Random random = new Random();
+    }
+
     public Room getCurrentRoom() {
         return this.currentRoom;
     }
@@ -28,15 +33,23 @@ public class Player {
         if (input.equalsIgnoreCase("go north")) {
             if (currentRoom.getNorth() != null) {
                 currentRoom = currentRoom.getNorth();
-                return currentRoom.toString();
+                System.out.println(currentRoom.toString());
+                if(currentRoom.getEnemy() != null){
+                    System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
+                }
+
             } else {
                 return "You cant go that way";
             }
+
         }
         if (input.equalsIgnoreCase("go south")) {
             if (currentRoom.getSouth() != null) {
                 currentRoom = currentRoom.getSouth();
-                return currentRoom.toString();
+                System.out.println(currentRoom.toString());
+                if(currentRoom.getEnemy() != null){
+                    System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
+                }
             } else {
                 return "You cant go that way";
             }
@@ -44,7 +57,10 @@ public class Player {
         if (input.equalsIgnoreCase("go east")) {
             if (currentRoom.getEast() != null) {
                 currentRoom = currentRoom.getEast();
-                return currentRoom.toString();
+                System.out.println(currentRoom.toString());
+                if(currentRoom.getEnemy() != null){
+                    System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
+                }
             } else {
                 return "You cant go that way";
             }
@@ -52,7 +68,10 @@ public class Player {
         if (input.equalsIgnoreCase("go west")) {
             if (currentRoom.getWest() != null) {
                 currentRoom = currentRoom.getWest();
-                return currentRoom.toString();
+                System.out.println(currentRoom.toString());
+                if(currentRoom.getEnemy() != null){
+                    System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
+                }
             } else {
                 return "You cant go that way";
             }

@@ -100,5 +100,9 @@ public class Room {
     public Enemy getEnemy(){
         return this.enemy;
     }
+
+    public String getEnemyName(){
+        return this.getEnemy().getName();
+    }
     
 }

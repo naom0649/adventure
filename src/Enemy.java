@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-
 public class Enemy {
     private final String name;
-    private final ArrayList<Item> inventory = new ArrayList<>();
     private final Colors color = new Colors();
 
     private int health;
@@ -20,4 +17,6 @@ public class Enemy {
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public String getName(){return this.name;}
 }

@@ -5,10 +5,6 @@ public class MeleeWeapon extends Weapon {
         this.itemDescription = itemDescription;
         this.weight = weight;
         this.damage = damage;
-        /*if(!isLethal){
-            this.health = amount;
-        }else{
-            this.damage = amount;
-        }*/
+
     }
 }

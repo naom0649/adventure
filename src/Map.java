@@ -51,12 +51,13 @@ public class Map {
         room1.addItem(new Item("lamp", "A lamp", 0.3));
         room1.addItem(new MeleeWeapon("Sword", "Bad Sword", 2,5));
         room1.addItem(new MeleeWeapon("Thor", "Bad HAMMER", 2.5, 4));
-        room1.setEnemy(new Enemy("Test Enemy 1", 10));
+
 
         room2.setEast(room3);
         room2.addItem(new Food("Bread", "Eat it to get health back", 0.2, 15));
         room2.addItem(new MeleeWeapon("Hammer", "Bad HAMMER", 2.5, 4));
         room2.addItem(new ShootingWeapon("Bow", "Beskrivelse her", 2.7, 5));
+        room2.setEnemy(new Enemy("Test Enemy 1", 10));
 
         room3.setSouth(room6);
         room3.addItem(new MeleeWeapon("Axe","Big Axe", 3.5, 6));
