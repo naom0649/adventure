@@ -3,11 +3,17 @@ public class Enemy {
     private final Colors color = new Colors();
 
     private int health;
+    private int dmg;
 
     public Enemy(String name, int health) {
         this.name = name;
         this.health = health;
 
+
+    }
+
+    public int getDmg() {
+        return dmg;
     }
 
     public int getHealth() {
@@ -15,8 +21,10 @@ public class Enemy {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+        this.health -= health;
     }
 
-    public String getName(){return this.name;}
+    public String getName() {
+        return this.name;
+    }
 }

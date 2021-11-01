@@ -34,7 +34,7 @@ public class TheGame {
         String doNext;
 
         do {
-            input = getStringInput("What do you want?");
+            input = getStringInput("What do you want to do?");
             doNext = helpCommands(input);
             if (doNext == null) {
                 doNext = player.setCurrentRoom(input);
@@ -138,7 +138,24 @@ public class TheGame {
                 System.out.println("Health: "+player.getHealth());
 
             case "equip":
-                
+                if(player.getInventory().size() == 0){
+                    System.out.println(color.red() + "You have nothing to equip..." + color.resetText());
+                    break;
+                }
+                System.out.println("what would you like to equip?");
+                System.out.println(player.getInventory());
+                input = user.nextLine();
+                for (int i = 0; i < player.getInventory().size(); i++) {
+                    if(input.equalsIgnoreCase(player.getInventory().get(i).getItemName())){
+                        player.addToEquip((Weapon) player.getInventory().get(i));
+                        System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
+                        player.setDamage(player.getEquip().get(i));
+                    }
+                }
+                break;
+            case "equipped":
+                System.out.println("Equipped items: " + color.green() + player.getEquip() + color.resetText());
+                break;
 
         }
     return null;

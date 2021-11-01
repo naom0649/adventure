@@ -11,6 +11,10 @@ public abstract class Weapon extends Item {
         return null;
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
     public String getName() {
         return itemName;
     }

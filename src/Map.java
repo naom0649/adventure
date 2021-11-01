@@ -60,19 +60,20 @@ public class Map {
         room2.setEnemy(new Enemy("Test Enemy 1", 10));
 
         room3.setSouth(room6);
-        room3.addItem(new MeleeWeapon("Axe","Big Axe", 3.5, 6));
-        room3.addItem(new ShootingWeapon("Bowy","Big Axe", 1.5, 8));
+        room3.addItem(new MeleeWeapon("Axe","Big Axe", 3.5, -6));
+        room3.addItem(new ShootingWeapon("Bowy","Big Axe", 1.5, -8));
         room3.addItem(new Food("Apple", "Eat it to get health back", 0.1, 5));
 
         room4.setSouth(room7);
-        room4.addItem(new MeleeWeapon("Knife","Sharp Knife", 1.2, 2));
+        room4.addItem(new MeleeWeapon("Knife","Sharp Knife", 1.2, -2));
 
         room5.setSouth(room8);
+        room5.setEnemy(new Enemy("The King", 80));
 
         room6.addItem(new Food("Mushroom","Live forever", 1.5, -10));
-        room6.addItem(new MeleeWeapon("Club","A club with sharp spikes", 3.4, 4));
+        room6.addItem(new MeleeWeapon("Club","A club with sharp spikes", 3.4, -4));
         room6.setSouth(room9);
-        room6.addItem(new ShootingWeapon("Bow and arrow","A magic bow", 1, 10));
+        room6.addItem(new ShootingWeapon("Bow and arrow","A magic bow", 1, -10));
 
         room7.setEast(room8);
         room7.addItem(new MeleeWeapon("Club","club made of wood", 2.8, 2));
