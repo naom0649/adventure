@@ -160,6 +160,7 @@ public class TheGame {
                         player.removeItem(player.getInventory().get(i));
                     }
                 }
+
                 break;
 
             case "equipped":
