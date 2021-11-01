@@ -137,6 +137,9 @@ public class TheGame {
             case "health":
                 System.out.println("Health: "+player.getHealth());
 
+            case "equip":
+                
+
         }
     return null;
     }

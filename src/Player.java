@@ -6,9 +6,9 @@ public class Player {
     private Room currentRoom;
     private final String name;
     private final ArrayList<Item> inventory = new ArrayList<>();
+    private final ArrayList<Item> equip = new ArrayList<>();
     private final Colors color = new Colors();
     private final Scanner user = new Scanner(System.in);
-
 
     private int health = 100;
     private final int maxHealth = 100;
@@ -82,6 +82,10 @@ public class Player {
     public ArrayList<Item> getInventory() {
 
         return inventory;
+    }
+
+    public ArrayList<Item> getEquip(){
+        return equip;
     }
 
     public int cleanIt() {
