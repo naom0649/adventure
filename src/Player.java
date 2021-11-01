@@ -33,11 +33,17 @@ public class Player {
             if (firstGoer == 1) { //Player goes first
 
                 while (isAlive) {
+                    System.out.println("Enemy health: " + enemy.getHealth());
                     enemy.setHealth(getDamage());
                     System.out.println("You did: " + getDamage() + '!');
                     player.adjustHealth(enemy.getDmg());
                     System.out.println("You took: " + enemy.getDmg() + '!');
                     System.out.println("Health: " + player.getHealth());
+                    if (enemy.getHealth() <= 0) {
+                        System.out.println("The enemy died!");
+                        inCombat = false;
+                        break;
+                    }
 
                     if (getHealth() <= 50 && !check) {
                         System.out.println("Continue fighting or run?");
@@ -55,10 +61,6 @@ public class Player {
                     }
 
 
-                    if (enemy.getHealth() <= 0) {
-                        System.out.println("The enemy died!");
-                        break;
-                    }
                     if (player.getHealth() <= 0) {
                         System.out.println("You died! :(");
                         isAlive = false;
@@ -67,11 +69,17 @@ public class Player {
                 }
             } else {//Enemy goes first
                 while (isAlive) {
+                    System.out.println("Enemy health: " + enemy.getHealth());
                     player.adjustHealth(enemy.getDmg());
                     System.out.println("You took: " + enemy.getDmg() + '!');
                     enemy.setHealth(getDamage());
                     System.out.println("You did: " + getDamage() + '!');
                     System.out.println("Health: " + player.getHealth());
+                    if (enemy.getHealth() <= 0) {
+                        System.out.println("The enemy died!");
+                        inCombat = false;
+                        break;
+                    }
 
                     if (getHealth() <= 50 && !check) {
                         System.out.println("Continue fighting or run?");
@@ -85,14 +93,9 @@ public class Player {
                         }else{
                             System.out.println(color.red() + "Not a valid input!" + color.resetText());
                         }
-
                     }
 
 
-                    if (enemy.getHealth() <= 0) {
-                        System.out.println("The enemy died!");
-                        break;
-                    }
                     if (player.getHealth() <= 0) {
                         System.out.println("You died! :(");
                         isAlive = false;
@@ -116,10 +119,11 @@ public class Player {
                 if (currentRoom.getEnemy() != null) {
                     System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
                     System.out.println("You can Fight or Run");
-                    if (user.nextLine().equalsIgnoreCase("fight")) {
+                    String answer = user.nextLine();
+                    if (answer.equalsIgnoreCase("fight")) {
                         combat(this, currentRoom.getEnemy());
 
-                    } else if (user.nextLine().equalsIgnoreCase("run")) {
+                    } else if (answer.equalsIgnoreCase("run")) {
                         System.out.println(color.green() + "You ran away!" + color.resetText());
                     } else {
                         System.out.println(color.red() + "Not a valid command!" + color.resetText());
@@ -135,7 +139,8 @@ public class Player {
             if (currentRoom.getSouth() != null) {
                 System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
                 System.out.println("You can Fight or Run");
-                if (user.nextLine().equalsIgnoreCase("fight")) {
+                String answer = user.nextLine();
+                if (answer.equalsIgnoreCase("fight")) {
                     combat(this, currentRoom.getEnemy());
 
                 } else if (user.nextLine().equalsIgnoreCase("run")) {
@@ -154,10 +159,10 @@ public class Player {
                 if (currentRoom.getEnemy() != null) {
                     System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
                     System.out.println("You can Fight or Run");
-                    if (user.nextLine().equalsIgnoreCase("fight")) {
+                    String answer = user.nextLine();
+                    if (answer.equalsIgnoreCase("fight")) {
                         combat(this, currentRoom.getEnemy());
-
-                    } else if (user.nextLine().equalsIgnoreCase("run")) {
+                    } else if (answer.equalsIgnoreCase("run")) {
                         System.out.println(color.green() + "You ran away!" + color.resetText());
                     } else {
                         System.out.println(color.red() + "Not a valid command!" + color.resetText());
@@ -174,10 +179,11 @@ public class Player {
                 if (currentRoom.getEnemy() != null) {
                     System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
                     System.out.println("You can Fight or Run");
-                    if (user.nextLine().equalsIgnoreCase("fight")) {
+                    String answer = user.nextLine();
+                    if (answer.equalsIgnoreCase("fight")) {
                         combat(this, currentRoom.getEnemy());
 
-                    } else if (user.nextLine().equalsIgnoreCase("run")) {
+                    } else if (answer.equalsIgnoreCase("run")) {
                         System.out.println(color.green() + "You ran away!" + color.resetText());
                     } else {
                         System.out.println(color.red() + "Not a valid command!" + color.resetText());
