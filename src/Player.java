@@ -14,7 +14,7 @@ public class Player {
     private int health = 100;
     private final int maxHealth = 100;
     private double carryCapacity = 15; //15kg
-    private int damage;
+    private int damage = 1;
 
     Map map = new Map(1);
 

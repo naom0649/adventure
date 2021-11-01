@@ -147,17 +147,20 @@ public class TheGame {
                 System.out.println(player.getInventory());
                 input = user.nextLine();
                 for (int i = 0; i < player.getInventory().size(); i++) {
-                    if(input.equalsIgnoreCase(player.getInventory().get(i).getItemName())){
-                        if(player.getEquip().get(i) instanceof Weapon){
+                    if(input.equalsIgnoreCase(player.getInventory().get(i).getItemName())) {
+                        try{ //Foosøger at sætte item til equip listen. Hvis det ikke er et "Weapon" så sender den en fejl besked
                             player.addToEquip((Weapon) player.getInventory().get(i));
-                            System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
-                            player.setDamage((Weapon) player.getInventory().get(i));
-                            player.removeItem(player.getInventory().get(i));
-
+                        }catch (ClassCastException e){
+                            System.out.println("You cannot equip that item!");
+                            break;
                         }
+                        System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
+                        player.setDamage((Weapon) player.getInventory().get(i));
+                        player.removeItem(player.getInventory().get(i));
                     }
                 }
                 break;
+
             case "equipped":
                 System.out.println("Equipped items: " + color.green() + player.getEquip() + color.resetText());
                 break;
