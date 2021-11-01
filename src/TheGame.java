@@ -127,7 +127,6 @@ public class TheGame {
 
             case "inv","inventory":
                 player.cleanIt();
-                //System.out.println(color.yellow() + player.getInventory() + color.resetText());
             break;
 
             case "eat":
@@ -143,21 +142,25 @@ public class TheGame {
                     break;
                 }
 
+
                 System.out.println("what would you like to equip?");
                 System.out.println(player.getInventory());
                 input = user.nextLine();
                 for (int i = 0; i < player.getInventory().size(); i++) {
                     if(input.equalsIgnoreCase(player.getInventory().get(i).getItemName())){
-                        player.addToEquip((Weapon) player.getInventory().get(i));
-                        System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
-                        player.setDamage((Weapon) player.getInventory().get(i));
+                        if(player.getEquip().get(i) instanceof Weapon){
+                            player.addToEquip((Weapon) player.getInventory().get(i));
+                            System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
+                            player.setDamage((Weapon) player.getInventory().get(i));
+                            player.removeItem(player.getInventory().get(i));
+
+                        }
                     }
                 }
                 break;
             case "equipped":
                 System.out.println("Equipped items: " + color.green() + player.getEquip() + color.resetText());
                 break;
-
         }
     return null;
     }

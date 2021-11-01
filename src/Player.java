@@ -124,14 +124,12 @@ public class Player {
                     String answer = user.nextLine();
                     if (answer.equalsIgnoreCase("fight")) {
                         combat(this, currentRoom.getEnemy());
-
                     } else if (answer.equalsIgnoreCase("run")) {
                         System.out.println(color.green() + "You ran away!" + color.resetText());
                     } else {
                         System.out.println(color.red() + "Not a valid command!" + color.resetText());
                     }
                 }
-
             } else {
                 return "You cant go that way";
             }
@@ -139,16 +137,19 @@ public class Player {
         }
         if (input.equalsIgnoreCase("go south")) {
             if (currentRoom.getSouth() != null) {
-                System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
-                System.out.println("You can Fight or Run");
-                String answer = user.nextLine();
-                if (answer.equalsIgnoreCase("fight")) {
-                    combat(this, currentRoom.getEnemy());
-
-                } else if (user.nextLine().equalsIgnoreCase("run")) {
-                    System.out.println(color.green() + "You ran away!" + color.resetText());
-                } else {
-                    System.out.println(color.red() + "Not a valid command!" + color.resetText());
+                currentRoom = currentRoom.getSouth();
+                System.out.println(currentRoom.toString());
+                if (currentRoom.getEnemy() != null) {
+                    System.out.println("There is an enemy! It's: " + color.red() + currentRoom.getEnemyName() + color.resetText());
+                    System.out.println("You can Fight or Run");
+                    String answer = user.nextLine();
+                    if (answer.equalsIgnoreCase("fight")) {
+                        combat(this, currentRoom.getEnemy());
+                    } else if (answer.equalsIgnoreCase("run")) {
+                        System.out.println(color.green() + "You ran away!" + color.resetText());
+                    } else {
+                        System.out.println(color.red() + "Not a valid command!" + color.resetText());
+                    }
                 }
             } else {
                 return "You cant go that way";
@@ -184,7 +185,6 @@ public class Player {
                     String answer = user.nextLine();
                     if (answer.equalsIgnoreCase("fight")) {
                         combat(this, currentRoom.getEnemy());
-
                     } else if (answer.equalsIgnoreCase("run")) {
                         System.out.println(color.green() + "You ran away!" + color.resetText());
                     } else {
@@ -210,6 +210,10 @@ public class Player {
 
     public void addToEquip(Weapon item) {
         this.equip.add(item);
+    }
+
+    public void removeFromEquipped(Weapon item){
+        this.equip.remove(item);
     }
 
 

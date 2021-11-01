@@ -69,6 +69,7 @@ public class Map {
         room4.setSouth(room7);
         room4.addItem(new MeleeWeapon("Knife","Sharp Knife", 1.2, -2));
 
+
         room5.setSouth(room8);
         room5.setEnemy(new Enemy("The King", 80, room5));
 

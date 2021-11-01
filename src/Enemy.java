@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Enemy {
     private final String name;
-    private final Colors color = new Colors();
     private final ArrayList<Item> enemyItem = new ArrayList<>();
 
     private int health;
