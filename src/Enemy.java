@@ -7,12 +7,12 @@ public class Enemy {
 
     private int health;
     private int dmg;
+    private Room room;
 
-    public Enemy(String name, int health) {
+    public Enemy(String name, int health, Room room) {
         this.name = name;
         this.health = health;
-
-
+        this.room = room;
     }
 
     public ArrayList<Item> getEnemyList() {
@@ -42,5 +42,11 @@ public class Enemy {
 
     public String getName() {
         return this.name;
+    }
+
+    public void dead(){
+        for (int i = 0; i < enemyItem.size(); i++) {
+            room.addItem(enemyItem.get(i));
+        }
     }
 }

@@ -57,7 +57,7 @@ public class Map {
         room2.addItem(new Food("Bread", "Eat it to get health back", 0.2, 15));
         room2.addItem(new MeleeWeapon("Hammer", "Bad HAMMER", 2.5, 4));
         room2.addItem(new ShootingWeapon("Bow", "Beskrivelse her", 2.7, 5));
-        room2.setEnemy(new Enemy("Tobias, the orc", 30));
+        room2.setEnemy(new Enemy("Tobias, the orc", 30, room2));
         room2.getEnemy().addEnemyItem(new MeleeWeapon("Dagger", "Worn out dagger", .8, -12));
 
 
@@ -70,7 +70,7 @@ public class Map {
         room4.addItem(new MeleeWeapon("Knife","Sharp Knife", 1.2, -2));
 
         room5.setSouth(room8);
-        room5.setEnemy(new Enemy("The King", 80));
+        room5.setEnemy(new Enemy("The King", 80, room5));
 
         room6.addItem(new Food("Mushroom","Live forever", 1.5, -10));
         room6.addItem(new MeleeWeapon("Club","A club with sharp spikes", 3.4, -4));

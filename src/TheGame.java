@@ -142,6 +142,7 @@ public class TheGame {
                     System.out.println(color.red() + "You have nothing to equip..." + color.resetText());
                     break;
                 }
+
                 System.out.println("what would you like to equip?");
                 System.out.println(player.getInventory());
                 input = user.nextLine();
@@ -149,7 +150,7 @@ public class TheGame {
                     if(input.equalsIgnoreCase(player.getInventory().get(i).getItemName())){
                         player.addToEquip((Weapon) player.getInventory().get(i));
                         System.out.println("You equipped: " + player.getInventory().get(i).toString() + '!');
-                        player.setDamage(player.getEquip().get(i));
+                        player.setDamage((Weapon) player.getInventory().get(i));
                     }
                 }
                 break;

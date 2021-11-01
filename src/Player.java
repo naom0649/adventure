@@ -42,6 +42,7 @@ public class Player {
                     if (enemy.getHealth() <= 0) {
                         System.out.println("The enemy died!");
                         inCombat = false;
+                        enemy.dead();
                         break;
                     }
 
@@ -78,6 +79,7 @@ public class Player {
                     if (enemy.getHealth() <= 0) {
                         System.out.println("The enemy died!");
                         inCombat = false;
+                        enemy.dead();
                         break;
                     }
 
