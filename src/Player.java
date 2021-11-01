@@ -200,6 +200,11 @@ public class Player {
         return equip;
     }
 
+    public void addToEquip(Weapon item) {
+        this.equip.add(item);
+    }
+
+
     public int cleanIt() {
         int count = 1;
         for (Item clean : inventory) {
@@ -232,6 +237,7 @@ public class Player {
     public void removeItem(Item item) {
         inventory.remove(item);
     }
+
 
     public String getName() {
         return name;

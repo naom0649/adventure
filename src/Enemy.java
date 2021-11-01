@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class Enemy {
     private final String name;
     private final Colors color = new Colors();
+    private final ArrayList<Item> enemyItem = new ArrayList<>();
 
     private int health;
     private int dmg;
@@ -10,6 +13,19 @@ public class Enemy {
         this.health = health;
 
 
+    }
+
+    public ArrayList<Item> getEnemyList() {
+        return enemyItem;
+    }
+
+    public void addEnemyItem(Weapon weapon) {
+        enemyItem.add(weapon);
+        setDamage(weapon);
+    }
+
+    public void setDamage(Weapon weapon) {
+        this.dmg = weapon.getDamage();
     }
 
     public int getDmg() {
